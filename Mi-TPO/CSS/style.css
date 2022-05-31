@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-family: 'Just Another Hand', cursive;
+    font: size 75px;
+}
+html {
+    height: 100%;
+    margin: -10px;
+}
+header{
+    width: 100%;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;    
+    min-height: 100%;
+    margin: 0px;
+    background-color: rgb(12, 187, 192);
+}
+header {
+    background-color: rgb(253, 83, 160);
+    flex-grow: 1;    
+}
+#bt-menu{
+    display: none;
+}
+#checkbox{
+    display: none;
+}
+header label {
+    display: none;
+    width: 60px;
+    height: 60px;
+    padding: 10px;   
+}
+header label:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,0.3)
+}
+.menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    }
+.menu li{
+    text-align: center;
+    flex-grow: 1;
+}    
+.menu li:hover{
+    background: rgba(0,0,0,0.3);
+}
+.menu li a{
+    display: block;
+    padding: 15px 20px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: #000;
+    
+}
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template:     
+    "header" 
+    "main"
+    "sidebar"   
+    "footer" ;
+}
+.header {
+    grid-area: header;
+    background-color: blue;
+    
+
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(253, 83, 160);
+}
+.main {
+    grid-area: main;
+    margin: 0px;
+    background-color: #fff;
+    ;
+}
+.footer {
+    grid-area: footer;
+    background-color: rgb(253, 83, 160);
+}
+@media screen and (max-width: 1024px) {
+    header label{display: grid; height: auto; grid-template: auto auto auto auto / auto; gap: 20px;
+        display: block;
+    }
+    .grid-container {
+        grid-template-areas: 
+        "header header" 
+        "sidebar "  
+        "footer footer" 
+    }
+    .menu{
+        position: absolute;
+        background-color: #fff;
+        width: 70%;
+        margin-left: -70%;
+        transition: all 0.5s;
+    }
+    .menu ul{
+        flex-direction: column;
+    }
+    #btn-menu:checked ~ .menu {
+        margin: 0;
+    }
+    
+
+}
+@media screen and (max-width: 425px){/*segundo corte*/
+    .grid-container {display: grid; height: auto; grid-template: auto auto auto auto / auto; gap: 20px;
+        grid-template-areas: 
+        "header"
+        "main"
+        "sidebar"
+        "footer"; 
+    }
+}    
